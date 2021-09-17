@@ -36,7 +36,7 @@ void enqueue(struct queue*q , int val)
     }
 
 }
-int dequeue(struct queue*q,int val)
+int dequeue1(struct queue*q)
  {
      int a=-1;
      if(isempty(q)){
@@ -56,7 +56,9 @@ int main()
     q.arr = (int*) malloc(q.size*sizeof(int));
     enqueue(&q,12);
     enqueue(&q,15);
-    printf("dequeing lement %d", dequeue(&q));
+    printf("dequeing element %d\n", dequeue1(&q));
+    printf("dequeing element %d\n", dequeue1(&q));
+    
     if(isempty(&q))
     {
        printf("queue is empty");
