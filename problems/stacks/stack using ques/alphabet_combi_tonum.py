@@ -12,7 +12,7 @@ for i in range(len(Array)-1):#i=1 j=0
     j=0
     while j < len(Array):
         if j != i and j != i+1:#j=0 ,i=1
-            Combo.append(Array[j])    #appending value of j=0
+            Combo.append(Array[j])    #appending value of j=0 and i =1
             j += 1
         else: 
             Combo.append(num)
