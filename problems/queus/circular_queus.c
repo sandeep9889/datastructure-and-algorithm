@@ -3,14 +3,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct circularqueue
+struct circularqueue //here we make a structure
 {
     int size;
     int f;
     int r;
     int * arr;
 };
-int isempty(struct circularqueue*q){ 
+int isempty(struct circularqueue*q)
+{ 
     if(q->r==q->f)
     {
         return 1;
@@ -31,7 +32,7 @@ void enqueue(struct circularqueue*q , int val)
     {
     printf("this queue is full");}
     else{
-        q->r =(q->r+1)%q->size;
+        q->r =(q->r+1)%q->size; //we have also put circular   
         q->arr[q->r]=val;
     }
 
