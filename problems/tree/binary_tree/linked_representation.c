@@ -3,6 +3,7 @@
 #include <malloc.h>
 
 struct node
+// here we have to build struct
 {
     int data;
     struct node *left;
@@ -10,6 +11,7 @@ struct node
 };
 
 struct node *createnode(int data)
+// here we have create a node kthat has been store meomory in heap with malloc
 {
     struct node *n;
     n = (struct node *)malloc(sizeof(struct node));
@@ -19,9 +21,21 @@ struct node *createnode(int data)
     return n;
 }
 
-traverse_treee()
+void preorder(struct node * root)
 { 
-    
+    if (root!=NULL)
+     {
+         printf("%d",root->data);
+         preorder(root->left);
+         preorder(root->right);
+    }
+
+    // here we have to print 
+         /*  2
+          / \
+          4   11
+          /\   /\
+        14 16  18 20  */ 
 }
 int main()
 {
@@ -69,6 +83,7 @@ int main()
     p2->left = p5;
     p2->right = p6;
     p3->left =NULL;
+    preorder(p);
 
     return 0;
 }
