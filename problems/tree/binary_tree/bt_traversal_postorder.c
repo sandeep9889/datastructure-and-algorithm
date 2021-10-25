@@ -29,6 +29,7 @@ void postorder(struct node * root)
          postorder(root->right);
          printf("\t%d",root->data);
     }
+    
 
     // here we have to print 
     /*     2
@@ -37,7 +38,19 @@ void postorder(struct node * root)
           /\   /\
         14 16  18 20  */ 
 }
+
+
+void preorder(struct node * root)
+{ 
+    if (root!=NULL)
+     {
+         printf("\t%d",root->data);
+         preorder(root->left);
+         preorder(root->right);
+    }
+}
 int main()
+    
 {
     /*struct node * p;
     p = (struct node *)malloc(sizeof(struct node));
@@ -84,6 +97,8 @@ int main()
     p2->right = p6;
     p3->left =NULL;
     postorder(p);
+    printf("\n");
+    preorder(p);
 
     return 0;
 }
