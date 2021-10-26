@@ -23,6 +23,8 @@ struct node *createnode(int data)
 
 void inorder(struct node * root)
 { 
+// inorder is the type of traversing
+
     if (root!=NULL)
      {
          inorder(root->left);
@@ -35,7 +37,15 @@ void inorder(struct node * root)
           / \
           4   11
           /\   /\
-        14 16  18 20  */ 
+        14 16  18 20 
+        HOW IT WORKING?
+
+         inorder(root->left);
+        firstly 2 was gone then to left so  2 ka left m 4 then wapis se 4  ka left 14 fir 14 ka left is null then uspe null ane fir kuch value hi nahui h  k baad
+         printf("\t%d",root->data);
+        data print hojayega data m 14  fir fir right 14 ka bhi null h to data print hojayega root ka 4fir 4 ka right h 16 pr 16 ka bhi left and right was null to 
+        data print hoga 16 fir 2 print hoga fir 2 ka right m jakar same vaisa hi hoga 18 fir 11  fir 20 hence this is asnwer   */ 
+
 }
 int main()
 {
