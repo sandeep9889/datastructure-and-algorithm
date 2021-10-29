@@ -47,6 +47,26 @@ void inorder(struct node * root)
         data print hoga 16 fir 2 print hoga fir 2 ka right m jakar same vaisa hi hoga 18 fir 11  fir 20 hence this is asnwer   */ 
 
 }
+int isBst(struct node * root)
+ {
+     static struct node *prev = NULL;
+     if(root!=NULL)
+      { if(!isBst(root->left)) {
+
+          return 0 ; 
+      }
+      
+      if(prev!=NULL && root->data <=prev->data) {
+          return 0 ;
+      }
+      prev = root;
+      return isBst(root->right);
+
+ }
+ else {
+     return 1 ;
+ }
+ }
 int main()
 {
     /*struct node * p;
