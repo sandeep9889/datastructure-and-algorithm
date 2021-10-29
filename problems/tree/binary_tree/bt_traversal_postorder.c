@@ -56,7 +56,7 @@ int main()
     p = (struct node *)malloc(sizeof(struct node));
     p->data = 2;
     p->left =NULL;
-    p->right = NULL;
+    p->right = NULL; 
 
 
 
