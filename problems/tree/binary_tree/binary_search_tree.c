@@ -49,6 +49,9 @@ void inorder(struct node * root)
 }
 int isBst(struct node * root)
  {
+
+    //  the mean of static means if we used recursion so the variable ki value alaf alag call k liye diffrent nahi hogi
+    
      static struct node *prev = NULL;
      if(root!=NULL)
       { if(!isBst(root->left)) {
