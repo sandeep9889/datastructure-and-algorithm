@@ -77,8 +77,8 @@ struct node *p = createnode(50);
     p2->left=p5;
 
     
-  insert(p,7);
-  printf("%d",p->right->right);
+  insert(p,15);
+  printf("%d",p->right->right->data);
   return 0 ;
 
 
