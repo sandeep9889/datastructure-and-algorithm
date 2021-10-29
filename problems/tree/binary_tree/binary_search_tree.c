@@ -111,6 +111,8 @@ int main()
     
     p3->left =NULL;
     inorder(p);
+   printf(" \n");
+    printf("%d",isBst(p));
 
     return 0;
 }
