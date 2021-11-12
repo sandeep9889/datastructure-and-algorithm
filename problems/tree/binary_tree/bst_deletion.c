@@ -35,7 +35,7 @@ struct node *createnode(int data)
  }
 
 
-int insert(struct node *root, int key){
+void insert(struct node *root, int key){
     struct node *prev = NULL;
     while(root!=NULL){
          prev =root;
@@ -58,6 +58,41 @@ int insert(struct node *root, int key){
         prev->right =new;
     }
 }
+struct node *inorderpresecessor(root){
+    // root = root->left;
+    // while(root->right!=NULL){
+    //     root = root->right;
+    // }
+    return root;
+}
+struct node*deletenode(struct node  *root, int value){
+    struct node* ipre;
+    if(root == NULL){
+
+        return NULL;
+    }
+    if(root->left ==NULL &&root->right == NULL){
+        free(root);
+    }
+    // search for the node is deleted
+    if(value<root->data)
+    { 
+        deletenode(root->left,value);
+    }
+    else if(value>root->data){
+        deletenode(root->right,value);
+    }
+
+    //deletion _stategy when the nodse is found
+    else { 
+        ipre  = inorderpresecessor(root);
+        root->data = ipre->data;
+        deletenode(root->left,ipre->data);
+
+    }
+
+
+}
 
 int main()
  {
@@ -76,11 +111,15 @@ struct node *p = createnode(50);
     p2->right=p6;
     p2->left=p5;
 
-    
-  printf(insert(p,15));
-  insert(p,18);
 
-  printf("%d",p->right->right->data);
+//       50
+//     /  \
+//    40    60
+//    /\     /\
+//   20 45  55 70
+
+    
+ 
   return 0 ;
 
 
