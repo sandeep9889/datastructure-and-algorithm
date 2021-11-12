@@ -27,6 +27,10 @@ struct node *createnode(int key)
     return node;
 }
 
+int  max (int a,int b){
+     return a>b?a:b; 
+}
+
 int getbalanacefactor(struct node *n)
 {
     if (n == NULL)
@@ -80,28 +84,37 @@ struct node *insert(struct node *node, int key)
     // left left case
     if (bf > 1 && key < node->left->key)
     {
-        rightrotate(node);
+        returnrightrotate(node);
     }
     // right right  case
     if (bf < -1 && key > node->right->key)
     {
-        leftrotate(node);
+        returnleftrotate(node);
     }
     // left right  case
 
     if(bf>1 && key > node->left->key)
     {  node->left =leftrotate(node->left);
-       rightrotate(node); 
+       returnrightrotate(node); 
     }
 
     // right left case 
 
      if(bf<-1 && key < node->right->key)
     {  node->right =rightrotate(node->right);
-       leftrotate(node); 
+       returnleftrotate(node); 
     }
 
     return node;
+}
+void preorder(struct node * root)
+{ 
+    if (root!=NULL)
+     {
+         printf("%d",root->key);
+         preorder(root->left);
+         preorder(root->right);
+    }
 }
 
 //          y                               x
@@ -112,7 +125,17 @@ struct node *insert(struct node *node, int key)
 
 int main()
 {
-
-
+    struct node *root = NULL;
+    root = insert(root,1);
+    root = insert(root,2);
+    root = insert(root,4);
+    root = insert(root,5);
+    root = insert(root,6);
+    root = insert(root,3);
+preorder(root);
     
+
+return 0;
+
+
 }
