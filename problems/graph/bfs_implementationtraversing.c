@@ -52,24 +52,29 @@ int main()
 { 
     struct queue q;
     q.size=100;
-    q.r=q.f=-1;
+    q.r=q.f=0;
     q.arr = (int*) malloc(q.size*sizeof(int));
-    enqueue(&q,12);
-    enqueue(&q,15);
-    printf("dequeing element %d\n", dequeue1(&q));
-    printf("dequeing element %d\n", dequeue1(&q));
+   // BFS IMPLEMENTATION
+   int u;
+   int i=0;
+   int visited[7]= {0,0,0,0,0,0,0};
+   int a[7][7] = {
+   {0,1,1,1,0,0,0},
+   {1,0,0,1,0,0,0},
+   {1,1,0,1,1,0,0},
+   {1,0,1,0,1,0,0},
+   {0,0,1,1,0,1,1},
+   {0,0,0,0,1,0,0},
+   {0,0,0,0,1,0,0},
     
-    if(isempty(&q))
-    {
-       printf("queue is empty");
-    }
-     
-    if(isfull(&q))
-    {
-        printf("queue is full");
-    }
-   
-    
+
+   };
+printf("%d", i);
+visited[i] = 1;
+enqueue(&q,i); //enqueue i for explanation
+ while(!isempty(&q)){
+     int node = dequeue(&q);
+ } 
     return 0;}
 
 
