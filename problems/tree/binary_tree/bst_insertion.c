@@ -78,6 +78,8 @@ struct node *p = createnode(50);
 
     
   insert(p,15);
+  insert(p,18);
+
   printf("%d",p->right->right->data);
   return 0 ;
 
